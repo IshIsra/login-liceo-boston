@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Liceo Boston</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .login-container {
+      background: #1e293b;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+      width: 100%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+    }
+    .google-btn {
+      background: white;
+      color: #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .google-btn img {
+      width: 20px;
+      margin-right: 10px;
+    }
+    .link {
+      display: block;
+      text-align: right;
+      margin-top: 0.5rem;
+      color: #93c5fd;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Iniciar sesión</h2>
+    <input type="email" id="email" placeholder="Correo institucional" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <span class="link" onclick="recoverPassword()">¿Olvidaste tu contraseña?</span>
+    <button onclick="login()">Ingresar</button>
+    <button class="google-btn" onclick="googleLogin()">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+      Continuar con Google
+    </button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (email.endsWith("@liceoboston.edu.co") && password === "12345") {
+        window.location.href = "https://sites.google.com/liceoboston.edu.co/liceobostonth/inicio";
+      } else {
+        alert("Correo o contraseña inválidos. Usa un correo institucional y la contraseña 12345.");
+      }
+    }
+
+    function recoverPassword() {
+      alert("Recuperación de contraseña simulada. Serás redirigido al sitio institucional.");
+      window.location.href = "https://sites.google.com/liceoboston.edu.co/liceobostonth/inicio";
+    }
+
+    function googleLogin() {
+      alert("Funcionalidad de Google aún no activa. Pronto disponible.");
+    }
+  </script>
+</body>
+</html>
